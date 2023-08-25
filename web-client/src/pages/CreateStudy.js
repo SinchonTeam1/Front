@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Study from "../components/Study";
 import { styled } from "styled-components";
 import DatePicker from "react-datepicker";
 import MiniToggle from "../components/mainPage/MiniToggle";
