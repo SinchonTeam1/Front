@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-
+import Study from '../components/Study';
 const Mypage=()=>{
     return(
         <>
+        <Study/>
         </>
 
     );
