@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Mypage from "./pages/Mypage";
@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Signup2 from "./pages/Signup2";
 import MainPage from "./pages/MainPage";
+import StudyDetail from "./pages/StudyDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signup2" element={<Signup2 />} />
+          <Route path="/detail" element={<StudyDetail />} />
         </Routes>
       </Router>
     </>
