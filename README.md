@@ -53,7 +53,7 @@
 
 - [Node.js 14.19.3](https://nodejs.org/ca/blog/release/v14.19.3/)
 - [Npm 9.2.0](https://www.npmjs.com/package/npm/v/9.2.0)
-- [Python 3.11.4](https://www.python.org/downloads/release/python-3114/)
+- [Python 3.10](https://www.python.org/downloads/release/python-3114/)
 
 ### Installation
 ``` bash
