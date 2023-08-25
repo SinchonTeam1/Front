@@ -111,26 +111,26 @@ $ npm run dev
 
 ---
 ## 화면 구성 📺
-| **메인 페이지**  |  **서비스 페이지 1**   |
+| **회원가입 페이지**  |  **학교 인증 페이지**   |
 | :-------------------------------------------: | :------------: |
-|  <img width="329" src="https://github.com/wooseok123/sinchonthon_readme/assets/59460718/a40b9b11-3833-4b81-8dea-9e34b10f81a7"/> |  <img width="329" src="https://github.com/wooseok123/sinchonthon_readme/assets/59460718/a40b9b11-3833-4b81-8dea-9e34b10f81a7"/>|  
-| **서비스 페이지 2**   |  **서비스 페이지 3**   |  
-| <img width="329" src="https://github.com/wooseok123/sinchonthon_readme/assets/59460718/a40b9b11-3833-4b81-8dea-9e34b10f81a7"/>   |  <img width="329" src="https://github.com/wooseok123/sinchonthon_readme/assets/59460718/a40b9b11-3833-4b81-8dea-9e34b10f81a7"/>     |
+|  <img width="329" src="https://github.com/SinchonTeam1/Front/assets/105200642/4acd2017-72e8-4f22-aec2-9a83d2648e8f"/> |  <img width="329" src="https://github.com/SinchonTeam1/Front/assets/105200642/305c0dc5-ebcb-4602-95b1-0fa0787785de"/>|  
+| **현재 모집 중인 스터디**   |  **내가 올린 스터디**   |  
+| <img width="329" src="https://github.com/SinchonTeam1/Front/assets/105200642/0964d953-f2f1-41e8-b325-1da35b8e24b4"/>   |  <img width="329" src="https://github.com/SinchonTeam1/Front/assets/105200642/e283ba37-e93f-42f4-a492-dd815f5a7d3c"/>     |
 
 ---
 ## 주요 기능 📦
 
-### ⭐️ 어쩌구 저쩌구 1에 대한 기능
-- 기능1에 대한 세부 설명1
-- 기능1에 대한 세부 설명2
+### ⭐️ 학교 이메일 인증
+- 서강대, 연세대, 이화여대, 홍익대의 학교 이메일로만 가입을 받기 때문에 인증된 유저만 활동
+- 인증된 인근 학교 학생만 이용할 수 있어 서비스 신뢰성이 증가
 
-### ⭐️ 어쩌구 저쩌구 2에 대한 기능
-- 기능2에 대한 세부 설명1
-- 기능2에 대한 세부 설명2
+### ⭐️ 관리자의 승인을 받은 스터디 모집글
+- 관련 없는 게시물&모집글이 많은 기존 플랫폼들과 달리, 관리자의 승인을 받아야 모집글 업로드 가능
+- 스터디의 기본 정보의 필수 입력과 소개글 가이드를 제공
 
-### ⭐️ 어쩌구 저쩌구 3에 대한 기능
-- 기능3에 대한 세부 설명1
-- 기능3에 대한 세부 설명2
+### ⭐️ 대면 교류 활성화
+- 신촌 인근 카페와의 제휴를 통해 대면 활동을 활성화
+- 신촌 인근 대학생들만이 이용할 수 있어 대면 만남이 유리
 
 ---
 ## 아키텍쳐
