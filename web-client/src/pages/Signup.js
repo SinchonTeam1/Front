@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as RealLogo } from "./../logo.svg";
+import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -20,6 +21,25 @@ const Signup = () => {
   };
 
   const gotoSignUp2 = () => {
+    const data = {
+      email: email,
+      name: nickname,
+      password: password,
+    };
+    const axiosConfig = {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    };
+    console.log(data);
+    axios
+      .post(
+        `${process.env.REACT_APP_BASE_URL}/api/user/register/`,
+        data,
+        axiosConfig
+      )
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
     navigate("/signup2");
   };
 
@@ -36,7 +56,7 @@ const Signup = () => {
               다음 도메인만 가입 가능합니다.
               <br></br> <br></br>
               서강대학교 @sogang.ac.kr | 연세대학교 @yonsei.ac.kr <br></br>
-              이화여자대학교 @ewhain.net | 홍익대학교 @hongik.ac.kr
+              이화여자대학교 @ewhain.net | 홍익대학교 @g.hongik.ac.kr
             </div>
             <input
               type="text"

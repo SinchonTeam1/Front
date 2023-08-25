@@ -2,12 +2,31 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as RealLogo } from "./../logo.svg";
+import axios from "axios";
 
 const Signup2 = () => {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const handleChange = (e) => {
     setCode(e.target.value);
+  };
+
+  const onClick = () => {
+    const token = { token: code };
+    const axiosConfig = {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    };
+    console.log(token);
+    axios
+      .post(
+        `${process.env.REACT_APP_BASE_URL}/api/user/verify-email/`,
+        token,
+        axiosConfig
+      )
+      .then((data) => navigate("/login"))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -24,7 +43,9 @@ const Signup2 = () => {
             <div className="title">코드를 입력해주세요.</div>
             <input type="text" value={code} onChange={handleChange}></input>
 
-            <button className="btn">가입하기</button>
+            <button className="btn" onClick={onClick}>
+              가입하기
+            </button>
           </InputWrapper>
         </Container>
       </Wrapper>

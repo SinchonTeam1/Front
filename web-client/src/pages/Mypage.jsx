@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Study from "../components/Study";
 import { styled } from "styled-components";
 import Header from "../components/mainPage/Header";
 import MyPost from "../components/MyPost";
 import ewha from "../image/ewha.png";
+import axios from "axios";
 
 const Mypage = () => {
   const [isBookmark, setBookmark] = useState(true);
   const [isMyPost, setMyPost] = useState(false);
+  const [data, setData] = useState("");
 
   const handleBookmarkClick = () => {
     setMyPost(false);
@@ -18,6 +20,20 @@ const Mypage = () => {
     setMyPost(true);
     setBookmark(false);
   };
+
+  useEffect(() => {
+    axios.defaults.withCredentials = true;
+    console.log(`Bearer ${localStorage.getItem("access")}`);
+    const headers = {
+      Authorization: `Bearer ${localStorage.getItem("access")}`,
+    };
+    axios
+      .get(`${process.env.REACT_APP_BASE_URL}/api/mypages/`, { headers })
+      .then((data) => {
+        setData(data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <Wrapper>
@@ -41,7 +57,7 @@ const Mypage = () => {
         </button>
       </Menu>
 
-      {isBookmark ? <Study /> : <MyPost />}
+      {isBookmark ? <Study /> : <MyPost data={data} />}
     </Wrapper>
   );
 };

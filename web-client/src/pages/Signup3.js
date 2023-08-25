@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import { ReactComponent as RealLogo } from "./../logo.svg";
 
 const Signup3 = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Wrapper>

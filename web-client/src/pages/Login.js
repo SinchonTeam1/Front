@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as RealLogo } from "./../logo.svg";
+import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
   const [username, setID] = useState("");
@@ -15,6 +16,28 @@ const Login = () => {
   };
   const gotoSignUp = () => {
     navigate("/signup");
+  };
+  const onClick = () => {
+    const data = { email: username, password: password };
+    const axiosConfig = {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    };
+
+    axios
+      .post(
+        `${process.env.REACT_APP_BASE_URL}/api/user/login/`,
+        data,
+        axiosConfig
+      )
+      .then((data) => {
+        console.log(data.data.access);
+        localStorage.setItem("access", data.data.access);
+        axios.defaults.headers.common["Authorization"] = data.data.access;
+        navigate("/mainPage");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -40,7 +63,9 @@ const Login = () => {
               value={password}
               onChange={handleChange2}
             ></input>
-            <button class="btn_login">로그인</button>
+            <button class="btn_login" onClick={onClick}>
+              로그인
+            </button>
           </InputWrapper>
           <BottomWrapper>
             <div className="question">계정이 없나요?</div>
