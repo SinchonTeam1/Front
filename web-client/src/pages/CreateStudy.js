@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Study from "../components/Study";
-import { styled } from "styled-components";
+import Study from '../components/Study';
+import { styled } from 'styled-components';
 
-const CreateStudy = () => {
-  const [company, setCompany] = useState("");
-  const [term, setTerm] = useState("");
-  const [people, setPeople] = useState("");
-  const [link, setLink] = useState("");
-  const [title, setTitle] = useState("");
-  const [contents, setContents] = useState("");
+const CreateStudy=()=>{
+    const [company, setCompany] = useState("");
+    const [term,setTerm]=useState("");
+    const [people, setPeople]=useState("");
+    const [link, setLink]=useState("");
+    const [title,setTitle]=useState("");
+    const [contents,setContents]=useState("");
 
   const handleChange = (e) => {
     setCompany(e.target.value);
@@ -20,13 +20,15 @@ const CreateStudy = () => {
     setPeople(e.target.value);
   };
 
-  return (
-    <>
-      <Wrapper>
-        <ContentWrapper>
-          <Title>스터디 기본 정보를 입력해주세요.</Title>
-          <Content>
+
+    return(
+        <>
+        <Wrapper>
+            <ContentWrapper>
+            <Title>스터디 기본 정보를 입력해주세요.</Title>
+            <Content>
             ❶ 분야
+            <MiniToggle />
             <div>❷ 회사</div>
             <input
               type="text"
@@ -35,7 +37,15 @@ const CreateStudy = () => {
               onChange={handleChange}
             ></input>
             <div>❸ 마감일</div>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
             <div>❹ 스터디 시작 예정일</div>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
             <div>❺ 예상 기간</div>
             <input
               type="text"
@@ -132,4 +142,12 @@ const IntroWrapper = styled.div`
     border: 1px solid #aeaeae;
     background: #fff;
   }
+`;
+
+const ButtonDiv = styled.div`
+  margin-top: 15px;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 30px;
 `;
