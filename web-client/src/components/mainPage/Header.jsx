@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { WriteBtn, UserProfile } from "./HeaderIcon";
+import { WriteBtn } from "./HeaderIcon";
+import userCircle from "../../image/userCircle.png";
 
 function Header(props) {
   return (
@@ -9,7 +10,7 @@ function Header(props) {
         <Logo>Logo</Logo>
         <LeftSide>
           <WriteBtn />
-          <StyledUserProfile />
+          <StyledUserProfile src={userCircle} />
         </LeftSide>
       </Headerdiv>
     </div>
@@ -18,29 +19,27 @@ function Header(props) {
 
 const Headerdiv = styled.div`
   display: flex;
-  background-color: yellow;
   max-width: 460px;
-  height: 22vh;
-  justify-content: center;
+  height: 10vh;
+  justify-content: space-between;
   align-items: center;
-  flex: 1;
 `;
 
 const Logo = styled.div`
   font-size: 24px;
-  margin-bottom: 10px;
-  position: absolute;
-  left: 0;
+  margin-left: 20px;
+  font-weight: bold;
 `;
 
 const LeftSide = styled.div`
-  position: absolute;
-  right: 0;
+  margin-right: 20px;
+  justify-content: space-between;
 `;
 
-const StyledUserProfile = styled(UserProfile)`
+const StyledUserProfile = styled.img`
   width: 30px;
   height: 30px;
+  margin-left: 20px;
 `;
 
 export default Header;
