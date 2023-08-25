@@ -38,7 +38,7 @@ margin-top:25px;
 margin-left:20px;
 `;
 const Wrapper=styled.div`
-margin:20px auto;
+// margin:20px auto;
 width: 460px;
 height: 155px;
 background-color:white;
@@ -69,6 +69,8 @@ line-height: normal;
 }
 `;
 const TopWrapper=styled.div`
+display:flex;
+align-items:center;
 img{
     margin-left:310px;
 }
