@@ -12,7 +12,6 @@ import Signup3 from "./pages/Signup3";
 import MainPage from "./pages/MainPage";
 import StudyDetail from "./pages/StudyDetail";
 
-
 function App() {
   return (
     <>
