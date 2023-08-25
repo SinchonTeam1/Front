@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 function Header(props) {
   const navigate = useNavigate();
 
+  const gotoHome = () => {
+    navigate("/");
+  };
+
   const gotoCreateStudy = () => {
     navigate("/createstudy");
   };
@@ -18,7 +22,7 @@ function Header(props) {
   return (
     <div>
       <Headerdiv>
-        <Logo src={mainLogo} />
+        <Logo src={mainLogo} onClick={gotoHome} />
         <LeftSide>
           <WriteBtn onClick={gotoCreateStudy} />
           <StyledUserProfile src={userCircle} onClick={gotoMyPage} />
