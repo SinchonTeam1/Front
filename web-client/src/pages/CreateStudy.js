@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import Study from '../components/Study';
-import { styled } from 'styled-components';
+import Study from "../components/Study";
+import { styled } from "styled-components";
+import DatePicker from "react-datepicker";
+import MiniToggle from "../components/mainPage/MiniToggle";
+import Header from "../components/mainPage/Header";
 
-const CreateStudy=()=>{
-    const [company, setCompany] = useState("");
-    const [term,setTerm]=useState("");
-    const [people, setPeople]=useState("");
-    const [link, setLink]=useState("");
-    const [title,setTitle]=useState("");
-    const [contents,setContents]=useState("");
+const CreateStudy = ({ title, options }) => {
+  const [company, setCompany] = useState("");
+  const [term, setTerm] = useState("");
+  const [people, setPeople] = useState("");
+  const [link, setLink] = useState("");
+  const [titles, setTitles] = useState("");
+  const [contents, setContents] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleChange = (e) => {
     setCompany(e.target.value);
@@ -20,13 +24,13 @@ const CreateStudy=()=>{
     setPeople(e.target.value);
   };
 
-
-    return(
-        <>
-        <Wrapper>
-            <ContentWrapper>
-            <Title>스터디 기본 정보를 입력해주세요.</Title>
-            <Content>
+  return (
+    <>
+      <Wrapper>
+        <ContentWrapper>
+          <Header />
+          <Title>스터디 기본 정보를 입력해주세요.</Title>
+          <Content>
             ❶ 분야
             <MiniToggle />
             <div>❷ 회사</div>
@@ -75,7 +79,7 @@ const CreateStudy=()=>{
               className="inputitle"
               type="text"
               placeholder="ex) 네이버 백엔드 개발 스터디 모집"
-              value={title}
+              value={titles}
               onChange={handleChange3}
             ></input>
             <div>❷ 내용</div>
@@ -110,21 +114,28 @@ const Title = styled.div`
   line-height: normal;
 `;
 const Content = styled.div`
+  line-height: 3;
   input {
     width: 420px;
     height: 30px;
     border-radius: 10px;
     border: 1px solid #aeaeae;
     background: #fff;
+    color: #003378;
   }
+  color: #003378;
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 `;
 const IntroWrapper = styled.div`
+  .title {
+    color: black;
+  }
   margin-top: 70px;
   font-size: 16px;
+  color: #003378;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
@@ -143,7 +154,6 @@ const IntroWrapper = styled.div`
     background: #fff;
   }
 `;
-
 const ButtonDiv = styled.div`
   margin-top: 15px;
   max-width: 400px;
