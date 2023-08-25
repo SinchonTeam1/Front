@@ -50,31 +50,33 @@
 
 ### Installation
 ``` bash
-$ git clone git@github.com:wooseok123/sinchonthon_readme.git
-$ cd 프로젝트명
+$ git clone https://github.com/SinchonTeam1/Front.git client
+$ git clone https://github.com/SinchonTeam1/server.git server
 ```
 
-
-
-
-
-
-(모노레포인 경우)
-#### Backend
+#### Backend (mac)
 ```
 $ cd server
 $ mkdir .venv
-$ pipenv install
-$ source .venv/Scripts/activate
+$ source .venv/bin/activate
 $ python3 manage.py migrate --run-syncdb
 $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 $ python3 manage.py runserver
 ```
-
+#### Backend (window)
+```
+$ cd server
+$ mkdir .venv
+$ source .venv/Scripts/activate
+$ python manage.py migrate --run-syncdb
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+```
 #### Frontend
 ```
-$ cd front
+$ cd client
 $ npm install 
 $ npm run dev
 ```
@@ -86,7 +88,7 @@ $ npm run dev
 ### Environment
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white)
-![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)             
+![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)
 
 ### Config
 ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)        
@@ -98,6 +100,7 @@ $ npm run dev
 
 ### Communication
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white)
+![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)
 
 ---
 ## 화면 구성 📺
