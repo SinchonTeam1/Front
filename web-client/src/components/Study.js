@@ -13,7 +13,11 @@ const Study=()=>{
 
 export default Study;
 const Wrapper=styled.div`
+width: 460px;
+height: 180px;
+background-color:black;
 `;
 
 const TitleWrapper=styled.div`
+
 `;
