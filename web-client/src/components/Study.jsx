@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ewha from "../image/ewha.png";
 import bookmark from "../image/bookmark.png";
 import filledbookmark from "../image/filledbookmark.png";
 const Study = (props) => {
   const [imageSrc, setImageSrc] = useState("../../image/bookmark.png"); // 초기 상태는 선택이 되지 않은 상태를 나타내기 위함
-  const [isClicked, setIsClicked] = useState(false); // 클릭 여부를 state로 관리
+  const [isClicked, setIsClicked] = useState(true); // 클릭 여부를 state로 관리
   return (
     <MainDiv>
       <Wrapper>
@@ -35,13 +35,16 @@ const Study = (props) => {
     </MainDiv>
   );
 };
-const BookmarkDiv = styled.div`
-  float: right;
-  margin-top: 29px;
-  margin-right: 15px;
-`;
+
 const MainDiv = styled.div`
   overflow: auto;
+  height: 80vh;
+`;
+
+const BookmarkDiv = styled.div`
+  float: right;
+
+  margin-right: 15px;
 `;
 
 const ContentWrapper = styled.div`
