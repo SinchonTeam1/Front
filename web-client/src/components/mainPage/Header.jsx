@@ -2,12 +2,13 @@ import React from "react";
 import { styled } from "styled-components";
 import { WriteBtn } from "./HeaderIcon";
 import userCircle from "../../image/userCircle.png";
+import mainLogo from "../../image/mainLogo.png";
 
 function Header(props) {
   return (
     <div>
       <Headerdiv>
-        <Logo>Logo</Logo>
+        <Logo src={mainLogo} />
         <LeftSide>
           <WriteBtn />
           <StyledUserProfile src={userCircle} />
@@ -25,7 +26,7 @@ const Headerdiv = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.div`
+const Logo = styled.img`
   font-size: 24px;
   margin-left: 20px;
   font-weight: bold;

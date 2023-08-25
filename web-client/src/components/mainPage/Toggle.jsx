@@ -65,7 +65,7 @@ function ToggleSection({ title, options }) {
 
   return (
     <Section>
-      <Button onClick={handleToggle}>
+      <Button selectedValue={selectedValue} onClick={handleToggle}>
         {selectedValue ? selectedValue : title}
         {isToggled ? (
           <FontAwesomeIcon
