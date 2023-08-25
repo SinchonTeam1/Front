@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import { ReactComponent as RealLogo } from "./../logo.svg";
 const Login = () => {
   const navigate = useNavigate();
   const [username, setID] = useState("");
@@ -13,12 +13,18 @@ const Login = () => {
   const handleChange2 = (e) => {
     setPW(e.target.value.toString());
   };
+  const gotoSignUp = () => {
+    navigate("/signup");
+  };
 
   return (
     <>
       <Wrapper>
         <Container>
-          <Logo>LOGO</Logo>
+          <LogoWrapper>
+            <RealLogo width="184px" height="50px" />
+          </LogoWrapper>
+
           <InputWrapper>
             <div class="input">학교 이메일 주소</div>
             <input
@@ -38,7 +44,9 @@ const Login = () => {
           </InputWrapper>
           <BottomWrapper>
             <div className="question">계정이 없나요?</div>
-            <div className="signup">회원가입하기</div>
+            <div className="signup" onClick={gotoSignUp}>
+              회원가입하기
+            </div>
           </BottomWrapper>
         </Container>
       </Wrapper>
@@ -46,7 +54,12 @@ const Login = () => {
   );
 };
 export default Login;
-const Logo = styled.div``;
+const LogoWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 80px;
+`;
 const Wrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -104,7 +117,8 @@ const InputWrapper = styled.div`
     width: 420px;
     height: 50px;
     border-radius: 10px;
-    background: #5f5f5f;
+    background: #003378;
     box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.25);
+    color: white;
   }
 `;
