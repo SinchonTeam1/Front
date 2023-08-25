@@ -3,15 +3,25 @@ import { styled } from "styled-components";
 import { WriteBtn } from "./HeaderIcon";
 import userCircle from "../../image/userCircle.png";
 import mainLogo from "../../image/mainLogo.png";
+import { useNavigate } from "react-router-dom";
 
 function Header(props) {
+  const navigate = useNavigate();
+
+  const gotoCreateStudy = () => {
+    navigate("/createstudy");
+  };
+
+  const gotoMyPage = () => {
+    navigate("/mypage");
+  };
   return (
     <div>
       <Headerdiv>
         <Logo src={mainLogo} />
         <LeftSide>
-          <WriteBtn />
-          <StyledUserProfile src={userCircle} />
+          <WriteBtn onClick={gotoCreateStudy} />
+          <StyledUserProfile src={userCircle} onClick={gotoMyPage} />
         </LeftSide>
       </Headerdiv>
     </div>

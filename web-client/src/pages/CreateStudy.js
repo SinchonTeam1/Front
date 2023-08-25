@@ -4,8 +4,12 @@ import { styled } from "styled-components";
 import DatePicker from "react-datepicker";
 import MiniToggle from "../components/mainPage/MiniToggle";
 import Header from "../components/mainPage/Header";
+import setPostBtn from "../image/setPostBtn.png";
+import { useNavigate } from "react-router-dom";
 
 const CreateStudy = ({ title, options }) => {
+  const navigate = useNavigate();
+
   const [company, setCompany] = useState("");
   const [term, setTerm] = useState("");
   const [people, setPeople] = useState("");
@@ -22,6 +26,10 @@ const CreateStudy = ({ title, options }) => {
   };
   const handleChange3 = (e) => {
     setPeople(e.target.value);
+  };
+
+  const handlePostBtnClick = () => {
+    navigate("/");
   };
 
   return (
@@ -92,12 +100,13 @@ const CreateStudy = ({ title, options }) => {
               onChange={handleChange3}
             ></input>
           </IntroWrapper>
+          <img src={setPostBtn} onClick={handlePostBtnClick} />
         </ContentWrapper>
       </Wrapper>
     </>
   );
 };
-export default CreateStudy;
+
 const Wrapper = styled.div`
   background: #f9f9f9;
   width: 640px;
@@ -161,3 +170,5 @@ const ButtonDiv = styled.div`
   justify-content: space-evenly;
   margin-left: 30px;
 `;
+
+export default CreateStudy;
